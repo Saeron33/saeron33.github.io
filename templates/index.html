@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Python Web Scraper</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        ul.list-group {
+            max-height: 300px;
+            margin-bottom: 10px;
+            overflow:scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+        h2.random-choice {
+            color: #007bff; /* Bootstrap primary color */
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>새론 토론 주제 선정</h1>
+        <p>{{ current_date }}</p>
+        <p> 최신 토론 주제</p>
+        <ul class="list-group mb-4">
+            {% for result in results %}
+            <li class="list-group-item">{{ result }}</li>
+            {% endfor %}
+        </ul>
+        <h2 class="random-choice">{{ random_choice }}</h2>
+        <a href="/" class="btn btn-primary">Choose Another</a>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
